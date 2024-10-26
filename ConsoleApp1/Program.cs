@@ -4,16 +4,16 @@
     {
         static void Main(string[] args)
         {
-            int[] array = new int[] {7,1,4,3,8,3};
-            int p = 1;
+            int[] array = new int[] {-7,5,-9,8,4,0};
+            int s = 0;
 
             for (int i = 0; i < array.Length; i++)
             {
-                if (array[i] % 2 == 0)
-                    p *= array[i];
+                if (array[i] < 0)
+                    s+= array[i];
                 
             }
-            Console.WriteLine(p);
+            Console.WriteLine(s);
         }
     }
 }

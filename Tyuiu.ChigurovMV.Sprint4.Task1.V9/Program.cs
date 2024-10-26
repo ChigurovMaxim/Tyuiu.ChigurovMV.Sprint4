@@ -10,7 +10,7 @@ namespace Tyuiu.ChigurovMV.Sprint4.Task1.V9
             Console.Title = "Спринт #4 | Выполнил: Чигуров М. В. | ПКТб-24-1";
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #4                                                               *");
-            Console.WriteLine("* Тема: Одномерные массивы (статический ввод)                             *");
+            Console.WriteLine("* Тема: Одномерные массивы (ввод с клавиатуры)                            *");
             Console.WriteLine("* Задание #1                                                              *");
             Console.WriteLine("* Вариант #4                                                              *");
             Console.WriteLine("* Выполнил: Чигуров Максим Владиславович | ПКТб-24-1                      *");

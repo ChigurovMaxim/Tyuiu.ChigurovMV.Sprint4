@@ -1,37 +1,45 @@
-﻿using Tyuiu.ChigurovMV.Sprint4.Task0.V4.Lib;
-namespace Tyuiu.ChigurovMV.Sprint4.Task0.V4
+﻿using Tyuiu.ChigurovMV.Sprint4.Task2.V19.Lib;
+namespace Tyuiu.ChigurovMV.Sprint4.Task2.V19
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             DataService ds = new DataService();
+            Random rnd = new Random();
             Console.Title = "Спринт #4 | Выполнил: Чигуров М. В. | ПКТб-24-1";
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #4                                                               *");
-            Console.WriteLine("* Тема: Одномерные массивы (статический ввод)                             *");
-            Console.WriteLine("* Задание #0                                                              *");
+            Console.WriteLine("* Тема: Одномерные массивы (генератор случайных чисел)                    *");
+            Console.WriteLine("* Задание #2                                                              *");
             Console.WriteLine("* Вариант #4                                                              *");
             Console.WriteLine("* Выполнил: Чигуров Максим Владиславович | ПКТб-24-1                      *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Написать программу, которая подсчитывает произведение четных элементов  *");
+            Console.WriteLine("* Написать программу, которая подсчитывает сумму нечетных элементов       *");
             Console.WriteLine("* массива                                                                 *");
             Console.WriteLine("*                                                                         *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
-            int[] nums = { 5, 3, 7, 1, 3, 9, 8, 7, 9, 4 };
-            Console.WriteLine("* Данный массив: ");
-            int i;
+
+            int len, i, a;
+            Console.WriteLine("* Введите длину массива: ");
+            len = int.Parse(Console.ReadLine());
+            int[] nums = new int[len];
+            for (i = 0; i < len; i++)
+            {
+                nums[i] = rnd.Next(4,10);
+            }
+            Console.WriteLine("* Данный массив: "); ;
             for (i = 0; i < nums.Length; i++)
             {
-                Console.Write(nums[i]+"\t");
+                Console.Write(nums[i] + "\t");
             }
             Console.WriteLine("\n***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
-            Console.WriteLine(ds.GetMultEvenArrEl(nums));
+            Console.WriteLine(ds.Calculate(nums));
         }
     }
 }
