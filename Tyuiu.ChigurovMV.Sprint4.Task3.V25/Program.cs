@@ -1,6 +1,6 @@
-﻿using Tyuiu.ChigurovMV.Sprint4.Task1.V9.Lib;
+﻿using Tyuiu.ChigurovMV.Sprint4.Task3.V25.Lib;
 
-namespace Tyuiu.ChigurovMV.Sprint4.Task1.V9
+namespace Tyuiu.ChigurovMV.Sprint4.Task3.V25
 {
     internal class Program
     {
@@ -10,43 +10,40 @@ namespace Tyuiu.ChigurovMV.Sprint4.Task1.V9
             Console.Title = "Спринт #4 | Выполнил: Чигуров М. В. | ПКТб-24-1";
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #4                                                               *");
-            Console.WriteLine("* Тема: Одномерные массивы (ввод с клавиатуры)                            *");
-            Console.WriteLine("* Задание #1                                                              *");
-            Console.WriteLine("* Вариант #9                                                              *");
+            Console.WriteLine("* Тема: Двумерные массивы. (статический ввод)                             *");
+            Console.WriteLine("* Задание #3                                                              *");
+            Console.WriteLine("* Вариант #25                                                              *");
             Console.WriteLine("* Выполнил: Чигуров Максим Владиславович | ПКТб-24-1                      *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Написать программу, которая подсчитывает произведение четных элементов  *");
-            Console.WriteLine("* массива                                                                 *");
+            Console.WriteLine("* Написать программу, которая подсчитывает произведение элементов в 4     *");
+            Console.WriteLine("* столбце                                                                 *");
             Console.WriteLine("*                                                                         *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
-            
-            int len, i, a;
-            Console.WriteLine("* Введите длину массива: ");
-            len = int.Parse(Console.ReadLine());
-            int[] nums = new int[len];
-            for (i = 0; i < len; i++)
+
+            int[,] matrix = new int[5,5] {   { 7, 3, 5, 3, 6 },
+                                             { 4, 6, 2, 5, 7 },
+                                             { 2, 3, 3, 3, 5 },
+                                             { 2, 7, 7, 6, 2 },
+                                             { 6, 6, 4, 3, 6 }
+                                            };
+            int i, j;
+            Console.WriteLine("* Массив: ");
+            for (i = 0; i < matrix.GetLength(0); i++)
             {
-                
-                do
+                for (j = 0; j < matrix.GetLength(1); j++)
                 {
-                    Console.WriteLine("* Введите " + i + " элемент массива от 3 до 8");
-                    a = Convert.ToInt32(Console.ReadLine());
-                    if (a < 3 || a > 8) Console.WriteLine("* Неверный ввод!");
-                } while (a < 3 || a > 8);
-                nums[i] = a;
+                    Console.Write($"{matrix[i, j]} \t");
+                }
+                Console.WriteLine();
             }
-            Console.WriteLine("* Данный массив: ");;
-            for (i = 0; i < nums.Length; i++)
-            {
-                Console.Write(nums[i] + "\t");
-            }
+            Console.WriteLine();
             Console.WriteLine("\n***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
-            Console.WriteLine(ds.Calculate(nums));
+            Console.WriteLine(ds.Calculate(matrix));
         }
     }
 }
