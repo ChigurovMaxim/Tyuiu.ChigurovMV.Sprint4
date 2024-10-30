@@ -4,19 +4,19 @@
     {
         static void Main(string[] args)
         {
-            int[,] array = new int[,] { {-7,8,-1}, { -3, -7, 8 }, {-7,-2,8} };
-            int s = 0;
+            int[,] array = new int[,] { {2,5,3,4}, { 2, 4, 6, 8 }, {9,1,3,5},{ 7, 2, 4, 6 } };
+            int c = 0;
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
                     if (array[i, j] % 2 == 0)
                     {
-                        s += array[i, j];
+                        c++;
                     }
                 }
             }
-            Console.WriteLine(s);
+            Console.WriteLine(c);
         }
     }
 }

@@ -1,0 +1,25 @@
+using Tyuiu.ChigurovMV.Sprint4.Task4.V16.Lib;
+namespace Tyuiu.ChigurovMV.Sprint4.Task4.V16.Test
+{
+    [TestClass]
+    public class DataServiceTest
+    {
+        [TestMethod]
+        public void CalcTest()
+        {
+            DataService ds = new DataService();
+            int[,] waitArray = { { 1,5,1,7,3},
+                                 { 5,1,1,7,3 },
+                                 { 5,5,5,1,5 },
+                                 { 1,5,1,1,3 },
+                                 { 1,5,1,5,5 } };
+            int[,] Array = { { 6,5,6,7,3},
+                                 { 5,4,6,7,3 },
+                                 { 5,5,5,6,5 },
+                                 { 6,5,4,4,3 },
+                                 { 4,5,4,5,5 } };
+            int[,] resArray = ds.Calculate(Array);
+            CollectionAssert.AreEqual(waitArray, resArray);
+        }
+    }
+}
