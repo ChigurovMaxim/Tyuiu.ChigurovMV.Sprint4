@@ -4,19 +4,22 @@
     {
         static void Main(string[] args)
         {
-            int[,] array = new int[,] { {2,5,3,4}, { 2, 4, 6, 8 }, {9,1,3,5},{ 7, 2, 4, 6 } };
-            int c = 0;
-            for (int i = 0; i < array.GetLength(0); i++)
+            string str = "548685532";
+            int[,] matrix = new int[3, 3];
+            int sum = 0;
+
+            for (int i = 0; i < 3; i++)
             {
-                for (int j = 0; j < array.GetLength(1); j++)
+                for (int j = 0; j < 3; j++)
                 {
-                    if (array[i, j] % 2 == 0)
+                    matrix[i, j] = int.Parse(str[i * 3 + j].ToString());
+                    if (i == 2)
                     {
-                        c++;
+                        sum += matrix[i, j];
                     }
                 }
             }
-            Console.WriteLine(c);
+            Console.WriteLine(sum);
         }
     }
 }
